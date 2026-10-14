@@ -1,3 +1,3 @@
-/* Půlnoc — na černé splývají plochy, tak je oddělí tenké linky. */
-.topbar { border-bottom-color: #1c1c1c; }
-.cteni-say { border-color: #1f1f1f; }
+/* Půlnoc — na černé splývají plochy, tak je oddělí tenké linky (jen v tmavém režimu). */
+:root[style*="color-scheme: dark"] .topbar { border-bottom-color: #1c1c1c; }
+:root[style*="color-scheme: dark"] .cteni-say { border-color: #1f1f1f; }

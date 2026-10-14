@@ -14,7 +14,7 @@
     {
       "id": "pulnoc",
       "name": "Půlnoc",
-      "description": "Čistě černý OLED vzhled — šetří baterii a v noci nesvítí. Ve světlém režimu zůstává výchozí.",
+      "description": "Čistě černý OLED vzhled — šetří baterii a v noci nesvítí. Ve světlém režimu čistě bílý s grafitovým písmem.",
       "author": "Paluba",
       "version": "1.0.0",
       "nahled": ["#000000", "#0a0a0a", "#f0a050", "#f2f2f2"],
