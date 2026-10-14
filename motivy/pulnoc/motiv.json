@@ -1,0 +1,21 @@
+{
+  "name": "Půlnoc",
+  "version": "1.0.0",
+  "description": "Čistě černý OLED vzhled — šetří baterii a v noci nesvítí. Ve světlém režimu zůstává výchozí.",
+  "author": "Paluba",
+  "nahled": ["#000000", "#0a0a0a", "#f0a050", "#f2f2f2"],
+  "barvy": {
+    "dark": {
+      "AMBER": "#f0a050", "BG": "#000000", "BG_SIDEBAR": "#050505", "BG_CARD": "#0a0a0a",
+      "FG": "#cfcfcf", "FG_BRIGHT": "#f2f2f2", "DIM": "#8a8a8a", "GREEN": "#45c463",
+      "RED": "#ff5c57", "CARD_HOVER": "#161616", "BORDER": "#222222", "SECTION": "#666666",
+      "CLOUD": "#5aa2ff", "FIRMA": "#b088ff", "CHART": "#f0a050", "CHART_CLOUD": "#5aa2ff",
+      "TERM_PALETTE": [
+        "#000000", "#ff5c57", "#45c463", "#f0c050", "#5aa2ff", "#d06fe0",
+        "#4fd6d0", "#cfcfcf", "#4a4a4a", "#ff7a75", "#6bdc85", "#ffd875",
+        "#82baff", "#e294ef", "#7be6e1", "#ffffff"
+      ]
+    }
+  },
+  "style": "motiv.css"
+}

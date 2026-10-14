@@ -1,0 +1,33 @@
+{
+  "verze": 1,
+  "pluginy": [
+    {
+      "id": "hodiny",
+      "name": "Hodiny v liště",
+      "description": "Hodiny v horní liště a vedle nich, jak dlouho Claude v aktivním chatu pracuje. Sekundy jdou zapnout v nastavení pluginu.",
+      "author": "Paluba",
+      "version": "1.0.0",
+      "path": "pluginy/hodiny"
+    }
+  ],
+  "motivy": [
+    {
+      "id": "pulnoc",
+      "name": "Půlnoc",
+      "description": "Čistě černý OLED vzhled — šetří baterii a v noci nesvítí. Ve světlém režimu zůstává výchozí.",
+      "author": "Paluba",
+      "version": "1.0.0",
+      "nahled": ["#000000", "#0a0a0a", "#f0a050", "#f2f2f2"],
+      "path": "motivy/pulnoc"
+    },
+    {
+      "id": "les",
+      "name": "Les",
+      "description": "Tmavě zelený les s mechovým akcentem, ve světlém režimu světlá šalvěj.",
+      "author": "Paluba",
+      "version": "1.0.0",
+      "nahled": ["#0f1a14", "#16241c", "#8fc46a", "#e4efe6"],
+      "path": "motivy/les"
+    }
+  ]
+}

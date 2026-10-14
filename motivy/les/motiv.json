@@ -1,0 +1,26 @@
+{
+  "name": "Les",
+  "version": "1.0.0",
+  "description": "Tmavě zelený les s mechovým akcentem, ve světlém režimu světlá šalvěj.",
+  "author": "Paluba",
+  "nahled": ["#0f1a14", "#16241c", "#8fc46a", "#e4efe6"],
+  "barvy": {
+    "dark": {
+      "AMBER": "#8fc46a", "BG": "#0f1a14", "BG_SIDEBAR": "#13211a", "BG_CARD": "#16241c",
+      "FG": "#c8d6cb", "FG_BRIGHT": "#e4efe6", "DIM": "#86a08d", "GREEN": "#5cc98a",
+      "RED": "#e2665a", "CARD_HOVER": "#1e3126", "BORDER": "#29402f", "SECTION": "#5f7a66",
+      "CLOUD": "#62a8d8", "FIRMA": "#b293e0", "CHART": "#8fc46a", "CHART_CLOUD": "#62a8d8",
+      "TERM_PALETTE": [
+        "#16241c", "#e2665a", "#8fc46a", "#d8b85a", "#62a8d8", "#b293e0",
+        "#5ec4a8", "#c8d6cb", "#3c5544", "#f08277", "#a8d887", "#ead17a",
+        "#86c0e6", "#c9aeed", "#7fd8bf", "#f2f8f3"
+      ]
+    },
+    "light": {
+      "AMBER": "#3f7d2a", "BG": "#f4f8f3", "BG_SIDEBAR": "#e8f0e6", "BG_CARD": "#ffffff",
+      "FG": "#1f2e24", "FG_BRIGHT": "#132018", "DIM": "#5b6e60", "GREEN": "#2a7a43",
+      "RED": "#b8372d", "CARD_HOVER": "#dbe7d8", "BORDER": "#c5d6c3", "SECTION": "#83968a",
+      "CLOUD": "#24679a", "FIRMA": "#6d4bb0", "CHART": "#3f7d2a", "CHART_CLOUD": "#24679a"
+    }
+  }
+}

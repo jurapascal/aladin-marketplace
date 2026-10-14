@@ -1,0 +1,10 @@
+/* Hodiny v liště — barvy z proměnných appky, ať sedí ke každému motivu. */
+.hodiny-plugin {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-right: 6px; padding: 2px 8px; border-radius: 999px;
+  color: var(--dim); font-size: 12px; font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.hodiny-plugin .hodiny-prace { color: var(--accent); }
+.hodiny-plugin .hodiny-prace[hidden] { display: none; }
+@media (max-width: 820px) { .hodiny-plugin { display: none; } }

@@ -1,0 +1,8 @@
+{
+  "name": "Hodiny v liště",
+  "version": "1.0.0",
+  "description": "Hodiny v horní liště a vedle nich, jak dlouho Claude v aktivním chatu pracuje. Sekundy jdou zapnout v nastavení pluginu.",
+  "author": "Paluba",
+  "main": "plugin.js",
+  "style": "plugin.css"
+}
