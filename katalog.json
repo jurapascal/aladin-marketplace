@@ -28,6 +28,15 @@
       "version": "1.0.0",
       "nahled": ["#0f1a14", "#16241c", "#8fc46a", "#e4efe6"],
       "path": "motivy/les"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "description": "Vzhled a rozložení jako claude.ai: panel na celou výšku s názvem nahoře, chat bez bublin u odpovědí patkovým písmem, pole na psaní uprostřed a terakotový akcent. Neutrální šedá ve tmě, bílá ve dne.",
+      "author": "Paluba",
+      "version": "1.0.0",
+      "nahled": ["#191919", "#1f1f1f", "#d97757", "#ffffff"],
+      "path": "motivy/claude"
     }
   ]
 }
