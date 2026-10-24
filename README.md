@@ -99,7 +99,7 @@ v `pluginy/hodiny/`.
 se souborem `SKILL.md` (popis, kdy ho použít, postup) a případnými
 `references/` s detaily, které se čtou až když jsou potřeba.
 
-Patří k [Palubě](https://github.com/jurapascal/claude-code-hub),
+Patří k [Palubě](https://github.com/jurapascal/aladin),
 ale fungují i samostatně — stačí je mít v Obsidian vaultu, ze kterého
 Claude Code čte paměť.
 
@@ -108,7 +108,7 @@ Claude Code čte paměť.
 Nejjednodušší cestou je instalačka hubu — nabídne je sama:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jurapascal/claude-code-hub/main/get.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jurapascal/aladin/main/get.sh | bash
 ```
 
 Ručně do existujícího vaultu:
