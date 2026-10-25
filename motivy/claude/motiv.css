@@ -420,7 +420,7 @@ html, body { font-family: var(--font-sans); }
   .composer-chip { font-size: 13.5px; padding: 6px 10px; }
   .composer-chip[data-act=model] .val, .composer-chip[data-act=mode] .val { font-size: 13.5px; }
   .composer-chip[data-act=history], .composer-chip[data-act=slash], .composer-chip[data-act=agent] { display: none; }
-  .composer-chip.ghost { order: 9; }
+  .composer-chip.ghost { padding: 6px 8px; font-size: 13px; }
   .composer-mic { width: 40px; height: 40px; border-radius: 50%; font-size: 19px; flex: none; }
   .composer-send {
     width: 40px; height: 40px; border-radius: 50%; font-size: 18px; flex: none;
