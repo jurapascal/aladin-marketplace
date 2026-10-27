@@ -1,0 +1,7 @@
+{
+  "name": "Jen firma",
+  "version": "1.0.0",
+  "description": "Okno je vždycky ve firemním prostoru, osobní prostor se v nabídce neukazuje. Pro firemní servery; hlídání účtů a plný přístup majitele řeší zvlášť server (aladin-jen-firma).",
+  "author": "Paluba",
+  "main": "plugin.js"
+}

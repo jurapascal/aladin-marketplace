@@ -8,6 +8,14 @@
       "author": "Paluba",
       "version": "1.0.0",
       "path": "pluginy/hodiny"
+    },
+    {
+      "id": "jen-firma",
+      "name": "Jen firma",
+      "description": "Okno je vždycky ve firemním prostoru, osobní prostor se v nabídce neukazuje. Pro firemní servery; hlídání účtů a plný přístup majitele řeší zvlášť server (aladin-jen-firma).",
+      "author": "Paluba",
+      "version": "1.0.0",
+      "path": "pluginy/jen-firma"
     }
   ],
   "motivy": [
