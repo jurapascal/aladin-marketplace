@@ -1,0 +1,10 @@
+[Unit]
+Description=Aladin – Jen firma: hned po novém účtu
+
+[Path]
+# Nový účet = nový domov tady (gateway/workspace.ensure).
+PathChanged=/home/hub/users
+Unit=aladin-jen-firma.service
+
+[Install]
+WantedBy=multi-user.target

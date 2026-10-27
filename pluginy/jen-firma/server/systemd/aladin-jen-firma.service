@@ -1,0 +1,10 @@
+[Unit]
+Description=Aladin – Jen firma (firma, majitel, plugin jen-firma)
+After=network.target
+
+[Service]
+Type=oneshot
+User=hub
+WorkingDirectory=/opt/claude-code-hub
+Environment=HUB_GW_DIR=/home/hub/gateway HUB_GW_REPO=/opt/claude-code-hub HUB_GW_CLAUDE=/home/hub/.claude HUB_GW_ISOLATION=bwrap
+ExecStart=/usr/bin/python3 /opt/aladin-jen-firma/jen_firma.py

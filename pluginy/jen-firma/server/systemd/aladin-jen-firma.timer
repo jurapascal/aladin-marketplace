@@ -1,0 +1,9 @@
+[Unit]
+Description=Aladin – Jen firma: kontrola každé dvě minuty
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=2min
+
+[Install]
+WantedBy=timers.target
