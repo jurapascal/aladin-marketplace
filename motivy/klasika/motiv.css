@@ -1,0 +1,221 @@
+/* Klasika — barvy a písmo jako motiv Claude, rozložení jako dřív.
+   Barvy jsou v motiv.json, tady je písmo, zaoblení a rozložení:
+   - otevřené chaty jako záložky v řádku nahoře, jen ty, které běží
+     (uspané a ukončené se schovají, otevřená je vidět vždy),
+   - vlevo seznam chatů jen s názvem — bez ikonky, času a náhledu odpovědi,
+   - pole na psaní a konverzace jako na claude.ai (odpověď patkovým písmem),
+   - tlačítka v Nastavení čitelná (tmavý text na terakotovém akcentu).
+   Rozložení na počítači platí od 821 px, telefon má rozložení Aladina. */
+
+:root {
+  --sidebar-w: 288px;
+  --radius: 8px;
+  --radius-lg: 14px;
+  --font-sans: system-ui, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Tiempos Text", "Tiempos Headline", Georgia, "Source Serif 4", "Source Serif Pro",
+                Charter, "Noto Serif", "DejaVu Serif", serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "JetBrains Mono", "DejaVu Sans Mono", monospace;
+  /* Průsvitné vrstvy z barvy písma — fungují ve tmavém i světlém režimu. */
+  --klasika-hover: color-mix(in srgb, var(--fg-bright) 7%, transparent);
+  --klasika-on: color-mix(in srgb, var(--fg-bright) 13%, transparent);
+  --klasika-prsten: color-mix(in srgb, var(--fg-bright) 10%, transparent);
+  --klasika-prsten-on: color-mix(in srgb, var(--fg-bright) 22%, transparent);
+  --klasika-bublina: color-mix(in srgb, var(--fg-bright) 6%, transparent);
+  --klasika-stin: 0 4px 20px rgba(0, 0, 0, .075);
+  --klasika-text-na-akcentu: #1a1a1a;
+}
+
+html, body { font-family: var(--font-sans); }
+
+/* ── 1. Postranní panel ─────────────────────────────────────────────────── */
+.side-nav { padding: 8px 8px 4px; gap: 2px; }
+.nav-item {
+  height: 32px; padding: 0 10px; gap: 10px; border-radius: 8px;
+  font-size: 14px; font-weight: 500; color: var(--fg-bright);
+}
+.nav-item:hover { background: var(--klasika-hover); }
+.nav-item.on { background: var(--klasika-on); font-weight: 500; }
+.nav-ico, .nav-item.on .nav-ico { color: var(--fg-bright); }
+.nav-new { color: var(--fg-bright); font-weight: 500; }
+.nav-plus { background: none; color: var(--fg-bright); width: 20px; height: 20px; }
+.nav-plus .ico { width: 16px; height: 16px; }
+
+.section, .chats .group-head {
+  color: var(--section); font-size: 12px; font-weight: 600; margin: 18px 18px 6px;
+}
+.section-count { color: var(--section); }
+.chats .group-head { padding-top: 0; border-top: none; }
+
+.searchwrap { margin: 0 8px 6px; }
+#chats-search, #search {
+  height: 32px; padding-top: 0; padding-bottom: 0; border-radius: 8px;
+  background: transparent; border-color: transparent; font-size: 14px;
+}
+#chats-search:hover, #search:hover { background: var(--klasika-hover); }
+#chats-search:focus, #search:focus { background: var(--klasika-hover); border-color: var(--klasika-prsten); }
+
+/* Chaty: jeden řádek s názvem. */
+.chat-item, body:not(.pokrocile) .chat-item {
+  margin: 0 8px; padding: 0 10px; min-height: 32px; justify-content: center;
+  border: none; border-radius: 8px;
+}
+.chat-item:hover { background: var(--klasika-hover); }
+.chat-item.aktivni { background: var(--klasika-hover); }   /* chat otevřený v hlavní ploše */
+.chat-title { font-size: 14px; color: var(--fg-bright); }
+.chat-meta { display: none; }
+
+.footer { border-top: 1px solid var(--border); padding: 8px; }
+.footer-me { padding: 4px 6px; margin: 0; border-radius: 8px; }
+.footer-me:hover { background: var(--klasika-hover); }
+.footer-avatar {
+  width: 24px; height: 24px; font-size: 11px; font-weight: 600;
+  background: var(--klasika-on); color: var(--fg-bright);
+}
+.footer-name { font-size: 14px; }
+
+/* ── 2. Úvod ────────────────────────────────────────────────────────────── */
+.welcome-scene { display: none; }
+.welcome-greet {
+  font: 400 32px/1.2 var(--font-serif); color: var(--fg-bright);
+  letter-spacing: -.01em; margin: 0 0 22px;
+}
+.welcome-greet::before { content: "✻"; color: var(--amber); margin-right: 12px; font-family: var(--font-sans); }
+
+/* ── 3. Pole na psaní ───────────────────────────────────────────────────── */
+.composer.on .composer-box {
+  width: 100%; max-width: 768px; margin: 0 auto;
+  background: var(--bg-card); border: none; border-radius: 14px;
+  padding: 10px 12px 8px;
+  box-shadow: var(--klasika-stin), 0 0 0 1px var(--klasika-prsten);
+}
+.composer.on .composer-box:focus-within {
+  background: var(--bg-card);
+  box-shadow: var(--klasika-stin), 0 0 0 1px var(--klasika-prsten-on);
+}
+.composer-input { font: 15px/21px var(--font-sans); }
+.composer-send { border-radius: 8px; width: 32px; height: 32px; }
+.composer-mic { width: 32px; height: 32px; border-radius: 8px; font-size: 17px; }
+
+/* Lišta pod polem: vlevo „+“ (příloha), vpravo model, režim, mikrofon a odeslání.
+   Historie, příloha a agent jen jako ikona, model a režim bez popisku. */
+.composer-tools { gap: 2px; }
+.composer-chip { font-size: 13px; padding: 4px 8px; border-radius: 8px; color: var(--dim); }
+.composer-chip:hover { background: var(--klasika-hover); border-color: transparent; color: var(--fg-bright); }
+.composer-chip .val { color: var(--fg-bright); font-weight: 500; }
+.composer-chip.composer-ctx, .composer-chip.ghost { color: var(--dim); }
+
+.composer-chip[data-act=file], .composer-chip[data-act=history], .composer-chip[data-act=agent] {
+  font-size: 0; gap: 0; padding: 0; width: 32px; height: 32px; justify-content: center;
+}
+.composer-chip[data-act=file] { order: -1; }
+.composer-chip[data-act=file] .ico { width: 18px; height: 18px; font-size: 18px; }
+.composer-chip[data-act=history] .ico { width: 15px; height: 15px; font-size: 15px; }
+.composer-chip[data-act=agent] { width: 28px; }
+.composer-chip[data-act=agent] .composer-dot { margin: 0; }
+.composer-chip[data-act=agent] .val { display: none; }
+
+.composer-chip[data-act=model], .composer-chip[data-act=mode] { font-size: 0; gap: 0; }
+.composer-chip[data-act=model] .val, .composer-chip[data-act=mode] .val { font-size: 13px; }
+.composer-chip[data-act=model] { order: 5; flex: none; margin-left: auto; color: var(--fg-bright); font-weight: 500; }
+/* Režim se na úzké liště zkrátí třemi tečkami, model zůstává celý. */
+.composer-chip[data-act=mode] { order: 6; flex: 0 1 auto; min-width: 0; overflow: hidden; }
+.composer-chip[data-act=mode] .val { overflow: hidden; text-overflow: ellipsis; }
+
+/* ── 4. Konverzace ──────────────────────────────────────────────────────── */
+.cteni-flow { max-width: 768px; gap: 18px; }
+/* Zpráva člověka: šedá bublina, bezpatkové písmo. */
+.cteni-bubble {
+  background: var(--klasika-bublina); border: none; border-radius: 12px;
+  padding: 12px 16px; color: var(--fg-bright);
+  font: 15px/21px var(--font-sans);
+}
+.cteni-img { border-color: var(--border); }
+/* Odpověď Clauda: bez bubliny, přes celou šířku, patkové písmo. */
+.cteni-say {
+  max-width: 100%; padding: 0 4px; background: none; border: none; border-radius: 0;
+  font: 15.5px/1.6 var(--font-serif); color: var(--fg-bright);
+}
+.cteni-say code, .cteni-say pre, .cteni-say kbd, .cteni-say samp { font-family: var(--font-mono); }
+.cteni-say code { background: var(--klasika-bublina); border-radius: 4px; }
+.cteni-say pre { background: var(--klasika-bublina); border: 1px solid var(--border); border-radius: 8px; }
+
+/* Psaní pod konverzací (čtení, sdílený chat): stejné pole jako dole v tabu. */
+.cteni-write { background: var(--bg); border-top: none; }
+.cteni-input {
+  padding: 12px 14px; border: none; border-radius: 14px; background: var(--bg-card);
+  font: 15px/21px var(--font-sans);
+  box-shadow: var(--klasika-stin), 0 0 0 1px var(--klasika-prsten);
+}
+.cteni-input:focus { box-shadow: var(--klasika-stin), 0 0 0 1px var(--klasika-prsten-on); }
+.cteni-send { border-radius: 8px; }
+.cteni-volba { color: var(--fg-bright); border-color: var(--klasika-prsten); }
+.cteni-volba:hover { background: var(--klasika-hover); }
+
+/* Zpráva ve frontě: stejná bublina, jen bledší; nedoručená s červeným lemem. */
+.cteni-fronta { gap: 6px; }
+.cteni-ceka .cteni-bubble, .cteni-me.ztracena .cteni-bubble {
+  background: var(--klasika-bublina); border: none; opacity: .7; color: var(--fg-bright);
+}
+.cteni-ceka.nedoslo .cteni-bubble, .cteni-me.ztracena .cteni-bubble {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--red) 55%, transparent);
+}
+.cteni-stitek { font-size: 12px; }
+.cteni-pomoc { padding: 0 4px; gap: 4px 6px; justify-content: flex-end; }
+.cteni-pomoc-text { text-align: right; font-size: 12px; }
+.cteni-pomoc-btn {
+  background: none; border: 1px solid var(--klasika-prsten); border-radius: 8px;
+  color: var(--fg-bright); font-size: 12.5px; padding: 3px 10px;
+}
+.cteni-pomoc-btn:hover { background: var(--klasika-hover); border-color: var(--klasika-prsten); }
+.cteni-akce { justify-content: flex-end; padding: 0 4px; gap: 2px; }
+.cteni-akce .cteni-pomoc-btn, .cteni-akce button { border-color: transparent; color: var(--dim); background: none; }
+.cteni-akce button:hover { background: var(--klasika-hover); color: var(--fg-bright); }
+.cteni-akce-smaz:hover { color: var(--red); background: var(--klasika-hover); }
+
+/* ── 5. Záložky (všude) ─────────────────────────────────────────────────── */
+.tab { font-size: 14px; }
+.tabplus .ico { color: var(--fg-bright); }
+/* Nahoře jen záložky, které běží; uspané a ukončené zůstávají v seznamu vlevo. */
+.tabbar .tab.uspany:not(.active), .tabbar .tab.exited:not(.active) { display: none; }
+
+/* ── 6. Rozložení na počítači (od 821 px) ───────────────────────────────── */
+@media (min-width: 821px) {
+  /* Záložky v samostatném řádku pod lištou; když se nevejdou, posouvají se do stran. */
+  .tabbar {
+    display: flex; height: 38px; padding: 0 8px; gap: 2px; align-items: center;
+    background: var(--bg-sidebar); border-bottom: 1px solid var(--border);
+  }
+  .tab {
+    flex: none; height: 30px; min-width: 120px; max-width: 220px; padding: 0 6px 0 10px;
+    border: none; border-radius: 8px; color: var(--dim); font-size: 13px;
+  }
+  .tab:hover { background: var(--klasika-hover); color: var(--fg-bright); }
+  .tab.active { background: var(--klasika-on); box-shadow: none; color: var(--fg-bright); font-weight: 500; }
+  .tabplus { height: 30px; border-radius: 8px; }
+  .tabplus:hover { background: var(--klasika-hover); }
+
+  /* Chaty vlevo: jen název na jednom řádku. */
+  .chats .chat-item.chat-wa { min-height: 32px; margin: 0 8px; padding: 0 6px 0 10px; gap: 0; border-radius: 8px; }
+  .chats .chat-wa .chat-av, .chats .chat-wa .chat-cas,
+  .chats .chat-wa .chat-nahled, .chats .chat-wa .chat-stitek { display: none; }
+  .chats .chat-wa .chat-body { flex-direction: row; align-items: center; gap: 4px; }
+  .chats .chat-wa .chat-r1 { flex: 1; min-width: 0; }
+  .chats .chat-wa .chat-title { font-size: 14px; font-weight: 400; color: var(--fg-bright); }
+  /* Hvězdička (připnutí) za názvem: připnutá vždy, jinak jen pod myší. */
+  .chats .chat-wa .chat-r2 { flex: none; }
+  .chats .chat-wa .chat-r2:not(:has(.chat-pin.on)) { display: none; }
+  /* Chat, ve kterém Claude právě pracuje: zelená tečka před názvem. */
+  .chats .chat-item.chat-wa.running .chat-title::before { content: "● "; color: var(--green); }
+}
+@media (min-width: 821px) and (hover: hover) {
+  .chats .chat-wa:hover .chat-r2 { display: flex; }
+}
+
+/* ── 7. Čitelnost tlačítek ──────────────────────────────────────────────────
+   Nastavení přepíná --accent na bílou, ale tlačítka mají napevno bílý text.
+   Akcent zůstává terakotový a text na něm tmavý (kontrast ≥ 5:1). */
+html .set-modal { --accent: var(--amber); }
+html .btn.primary, html .actionbtn.primary, html .link-open.primary,
+html .set-modal .btn.primary, html .set-modal .actionbtn.primary,
+html .set-modal button.primary { color: var(--klasika-text-na-akcentu); }
+html .btn.primary:disabled { color: var(--klasika-text-na-akcentu); opacity: .55; }
