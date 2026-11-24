@@ -45,6 +45,15 @@
       "version": "1.0.0",
       "nahled": ["#191919", "#1f1f1f", "#d97757", "#ffffff"],
       "path": "motivy/claude"
+    },
+    {
+      "id": "klasika",
+      "name": "Klasika",
+      "description": "Barvy a písmo jako motiv Claude, ale rozložení jako dřív: otevřené chaty jako záložky v řádku nahoře (jen ty, které běží) a vlevo jen názvy chatů bez ikon, času a náhledu.",
+      "author": "Tomáš Peška",
+      "version": "1.2.0",
+      "nahled": ["#191919", "#1f1f1f", "#d97757", "#ffffff"],
+      "path": "motivy/klasika"
     }
   ]
 }
