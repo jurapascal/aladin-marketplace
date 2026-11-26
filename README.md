@@ -114,7 +114,7 @@ curl -fsSL https://raw.githubusercontent.com/IT-Brno/aladin/main/get.sh | bash
 Ručně do existujícího vaultu:
 
 ```bash
-git clone https://github.com/jurapascal/claude-brain-skills.git \
+git clone https://github.com/IT-Brno/aladin-marketplace.git \
     ~/Obsidian/Claude-Brain/skills
 ```
 
